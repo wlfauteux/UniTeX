@@ -1,6 +1,10 @@
 \documentclass[12pt]{article}
 \usepackage{colors,style,commands}
 
+% Bibliography file
+\addbibresource{refs.bib}
+
+% Default color palette for the document
 \MasterColor    {uds}
 \MinorColor     {lightuds}
 
@@ -29,6 +33,7 @@
 \authorB        {Second Author,}
 \authorC        {Third Author}
 
+% Set pdf properties
 \hypersetup{
                 pdftitle={Title},
                 pdfauthor={F. Author, S. Author and T. Author},
@@ -57,6 +62,6 @@
     \clearpage
 
     \pagestyle{plain}
-    \bibliography{refs}
+    \printbibliography
 
 \end{document}
