@@ -25,8 +25,8 @@
 % Styled Lagrangian
 \newcommand{\Lagr}{\mathcal{L}}
 
-% Basis vector notation
-\newcommand{\basis}[1]{\mathbf{\hat{#1}}}
+% Quadrivector notation
+\newcommand{\qvec}[1]{\mathsf{#1}}
 
 % Always better epsilon
 \renewcommand{\epsilon}{\varepsilon}
@@ -54,11 +54,11 @@
 % Complete set quantum mechanics
 \newcommand{\compset}[1]{\ket{#1}\bra{#1}}
 
-% Vectors upright convention
-\renewcommand{\bm}[1]{\mathbf{#1}}
-
 % Identity operator
 \newcommand{\identity}{\ensuremath{\mathbb{1}}}
+
+% Complex conjugate
+\newcommand{\cc}[1]{#1^{\ast}}
 
 % -------------
 % Colored Boxes
@@ -157,3 +157,8 @@
 
 % Roman numbers
 \newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+% -------------------------
+% Math environment shortcut
+% -------------------------
+\def\[#1\]{\begin{align}#1\end{align}}

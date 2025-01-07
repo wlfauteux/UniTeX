@@ -1,25 +1,49 @@
 \documentclass[12pt, twoside]{article}
 \usepackage{colors,style,commands}
 
-\MasterColor  {yale1}
-\SetRefColor  {\MasterColor}
+% Bibliography file
+\addbibresource{refs.bib}
 
-% Title page variables
-\Titre        {Le travail}
-\SousTitre    {Précision(s)}
+% Default color palette for the document
+\MasterColor    {uds}
+\MinorColor     {lightuds}
 
-\NomCours     {Nom du cours}
-\CodeCours    {code}
+\hypersetup{
+        hyperindex=true,
+        bookmarks=true,
+        pdfa,
+        linktocpage,
+        colorlinks=true,
+        breaklinks=true,
+        urlcolor=black,
+        linkcolor=link_color,
+        citecolor=black,
+        bookmarksopen=true,
+}
 
-\Nom          {Votre nom complet}
+% Title page
+\CourseName     {Course I}
+\CourseCode     {PHQ \#\#\#}
 
-\Enseignant   {L'enseignant}
+\Title          {Title}
+\SubTitle       {Subtitle}
 
-\Emblem       {BISHOP} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
-\University   {Bishop's University}
-\Faculte      {la faculté}
-\Departement  {le département}
-\Date         {\today}
+% In case of missing authors fill with \phantom{noauthor}
+\Name          {Author}
+
+% Set pdf properties
+\hypersetup{
+                pdftitle={Title},
+                pdfauthor={Author},
+}
+
+\Professor      {Pr Professor Name}
+
+\Emblem         {UDS} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University     {Université de Sherbrooke}
+\Faculty        {Faculté des sciences}
+\Department     {Département de physique}
+\Date           {\today}
 
 
 \begin{document}
@@ -43,6 +67,6 @@
     \clearpage
 
     \pagestyle{plain} % Remove header for references
-    \bibliography{refs}
+    \printbibliography
 
 \end{document}
