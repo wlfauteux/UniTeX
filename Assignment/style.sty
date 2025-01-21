@@ -76,6 +76,15 @@
 % ----------------------------------------------
 % Titles (sections, subsections, subsubsections)
 % ----------------------------------------------
+\newcommand{\justifyheading}{\raggedleft}
+
+\titleformat{\section}{
+  \normalfont\Large\bfseries{
+    \color{\MasterColor}\titlerule[2pt]
+    }
+  \vspace{0.25cm}
+}{\thesection}{1em}{}
+
 \titleformat{\subsection}{
   \normalfont\large\bfseries{
     \color{\MasterColor}\titlerule[1pt]
