@@ -1,6 +1,6 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_Assignment
+PROJECT = UniTeX_homework
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
@@ -53,7 +53,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'Assignment' template cleaned !"
+	$(HIDE)echo -e "\n'homework' template cleaned !"
 
 targz:
 	$(MAKE) clean

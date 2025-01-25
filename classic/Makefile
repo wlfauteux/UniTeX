@@ -1,6 +1,6 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_Classic
+PROJECT = UniTeX_classic
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
@@ -53,7 +53,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'Classic' template cleaned !"
+	$(HIDE)echo -e "\n'classic' template cleaned !"
 
 targz:
 	$(MAKE) clean
