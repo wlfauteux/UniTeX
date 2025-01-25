@@ -23,7 +23,8 @@
 \usepackage[T1]{fontenc} % Uses fonts that have 256 glyphs
 \usepackage[11pt]{moresize} % To use '\HUGE' fontsize
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
-\usepackage[titles]{tocloft} % Table of contents (ToC) customization
+\usepackage[titles]{tocloft} % Table of contents (ToC) customisation
+\usepackage[]{appendix} % Better appendix customisation
 \usepackage[most]{tcolorbox} % Colored boxes support
 
 % ----------------
@@ -52,6 +53,10 @@
 \usepackage{listings} % Insert code blocks in .tex file
 \usepackage{subcaption} % Insert subcaptions in figure's caption
 \usepackage{graphicx}
+\usepackage[section]{placeins} % Limit figure and table placement to current section
+%\usepackage[nomarkers, nolists, tablesonly]{endfloat} % Delay table placement to most generally the appendix
+%\renewcommand{\efloatbegin}{}
+%\renewcommand{\efloatseparator}{\mbox{}}
 \usetikzlibrary{decorations.pathreplacing} % Permit tikz decoration drawings
 
 % ------------
@@ -70,7 +75,7 @@
 % Removing TOC's header
 \makeatletter
 \renewcommand\tableofcontents{
-    \thispagestyle{empty}
+    \thispagestyle{preamble}
     \section*{Table des matières}
     \@starttoc{toc}
 }
@@ -85,6 +90,9 @@
 \renewcommand{\cftsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsecdotsep}}
 \renewcommand{\cftsubsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsubsecdotsep}}
 
+% ---------------
+% Hyperlink setup
+% ---------------
 % Load hyperred package after 'tocloft' settings to color Toc
 \usepackage{hyperref}
 
@@ -101,25 +109,37 @@
 \newcommand{\justifyheading}{\raggedleft}
 
 \titleformat{\section}{
-  \normalfont\Large\bfseries{
-    \color{\MasterColor}\titlerule[2pt]
-    }
-  \vspace{0.25cm}
+        \normalfont\Large\bfseries{
+                \color{\MasterColor}\titlerule[2pt]
+        }
+        \vspace{0.25cm}
 }{\thesection}{1em}{}
 
 \titleformat{\subsection}{
-  \normalfont\large\bfseries{
-    \color{\MasterColor}\titlerule[1pt]
-    }
-  \vspace{0.25cm}
+        \normalfont\large\bfseries{
+                \color{\MasterColor}\titlerule[1pt]
+        }
+        \vspace{0.25cm}
 }{\thesubsection}{1em}{}
 
 \titleformat{\subsubsection}{
-  \normalfont\large\bfseries{
-    \color{\MasterColor}\titlerule[0.5pt]
-    }
-  \vspace{0.25cm}
+        \normalfont\large\bfseries{
+                \color{\MasterColor}\titlerule[0.5pt]
+        }
+        \vspace{0.25cm}
 }{\thesubsubsection}{1em}{}
+
+\newcommand*{\tsection}[1]{
+        \titleformat{\section}{
+                \normalfont\Large\bfseries{
+                        \color{\MasterColor}\titlerule[0pt]
+                }
+                \vspace{0.25cm}
+        }{\thesection}{1em}{}
+
+        \section*{#1}
+        \addcontentsline{toc}{section}{#1}
+}
 
 % -----------------
 % Headers & Footers
@@ -130,6 +150,11 @@
   \fancyhead[EL]{\color{\MasterColor}\nouppercase{\textit{\leftmark}}} % Section name on even pages
   \fancyfoot[C]{\thepage} % Page number centered
   \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
+}
+
+\fancypagestyle{preamble}{
+        \fancyhf{}
+        \fancyfoot[C]{\thepage}
 }
 
 \pagestyle{mypagestyle}

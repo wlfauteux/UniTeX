@@ -7,19 +7,6 @@
 % Default color palette for the document
 \MasterColor    {uds3}
 
-\hypersetup{
-        hyperindex=true,
-        bookmarks=true,
-        pdfa,
-        linktocpage,
-        colorlinks=true,
-        breaklinks=true,
-        urlcolor=\MasterColor,
-        linkcolor=\MasterColor,
-        citecolor=\MasterColor,
-        bookmarksopen=true,
-}
-
 % Title page
 \CourseName     {Course I}
 \CourseCode     {PHQ \#\#\#}
@@ -32,8 +19,9 @@
 
 % Set pdf properties
 \hypersetup{
-                pdftitle={Title},
-                pdfauthor={Author},
+                pdftitle={\Title},
+                pdfauthor={\Name},
+                pdfsubject={\CourseName, \CourseCode},
 }
 
 \Professor      {Pr Professor Name}
@@ -44,28 +32,31 @@
 \Department     {Département de physique}
 \Date           {\today}
 
-
 \begin{document}
+        \Language{french}
+        
+        \subfile{TitlePage}
+        
+        \tableofcontents
+        
+        \clearpage
+        
+        \subfile{sections/introduction}
+        
+        \subfile{sections/num_1}
+        
+        \subfile{sections/num_2}
+        
+        \subfile{sections/conclusion}
+        
+        % References
+        \clearpage
+        
+        \pagestyle{plain} % Remove header for references
+        \printbibliography
+        
+        % Appendix
+        %\clearpage
 
-    \Language{french}
-
-    \subfile{TitlePage}
-
-    \tableofcontents
-
-    \clearpage
-
-    \subfile{sections/introduction}
-
-    \subfile{sections/num_1}
-
-    \subfile{sections/num_2}
-
-    \subfile{sections/conclusion}
-
-    \clearpage
-
-    \pagestyle{plain} % Remove header for references
-    \printbibliography
-
+        %\subfile{sections/appendice.tex}
 \end{document}
