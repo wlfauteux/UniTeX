@@ -13,7 +13,7 @@
 \newcommand{\pd}{\partial}
 
 % Space between equations in math environnement
-\newcommand{\eqspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
+\newcommand{\betspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
 
 % Add text at the end of an equation in math env.
 \newcommand{\eqtext}[1]{,\hspace{0.5cm}\text{#1 }}
@@ -89,41 +89,48 @@
     parbox=false
 }
 
+% Classic colored boxes
+\renewcommand{\boxed}[1]{
+        \begin{mybox}
+                #1
+        \end{mybox}
+}
+
 % Numbered equation colored boxes
 \newcommand{\solution}[2]{
-    \begin{empheq}[box=\mymath]{align}
-        \label{#1}
-        #2
-    \end{empheq}
+        \begin{empheq}[box=\mymath]{align}
+                \label{#1}
+                #2
+        \end{empheq}
 }
 
 % Unnumbered equation colored boxes
 \newcommand{\Mboxed}[1]{
-    \begin{empheq}[box=\mymath]{align*}
-        #1
-    \end{empheq}
+        \begin{empheq}[box=\mymath]{align*}
+                #1
+        \end{empheq}
 }
 
 % Problem boxes
 \newcommand{\problem}[1]{
-    \begin{tcolorbox}[sharp corners, colback=white,colframe=\MasterColor,
-      colback=\MinorColor,arc=0pt]
-        \vspace{0.2cm}
-        \section*{
-        \centering
-        #1
-        }
-        \vspace{-0.3cm}
-    \end{tcolorbox}
-    \vspace{0.5cm}
+        \begin{tcolorbox}[sharp corners, colback=white,colframe=\MasterColor,
+        colback=\MinorColor,arc=0pt]
+                \vspace{0.2cm}
+                \section*{
+                \centering
+                #1
+                }
+                \vspace{-0.3cm}
+        \end{tcolorbox}
+        \vspace{0.5cm}
 }
 
 % Braces boxed
 \newcommand{\Braced}[1]{
-    \begin{bracedbox}
-        #1
-    \end{bracedbox}
-    \vspace{0.6cm}
+        \begin{bracedbox}
+                #1
+        \end{bracedbox}
+        \vspace{0.6cm}
 }
 
 % ---------------

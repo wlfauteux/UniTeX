@@ -8,19 +8,6 @@
 \MasterColor    {uds3}
 \MinorColor     {lightuds3}
 
-\hypersetup{
-        hyperindex=true,
-        bookmarks=true,
-        pdfa,
-        linktocpage,
-        colorlinks=true,
-        breaklinks=true,
-        urlcolor=black,
-        linkcolor=link_color,
-        citecolor=black,
-        bookmarksopen=true,
-}
-
 % Title page
 \CourseName     {Course I}
 \CourseCode     {PHQ \#\#\#}
@@ -28,16 +15,10 @@
 \Title          {Title}
 \SubTitle       {Subtitle}
 
-% In case of missing authors fill with \phantom{noauthor}
-\authorA        {First Author,}
-\authorB        {Second Author,}
+% In case of missing authors fill withuse \phantom{noauthor}
+\authorA        {First Author, }
+\authorB        {Second Author, }
 \authorC        {Third Author}
-
-% Set pdf properties
-\hypersetup{
-                pdftitle={Title},
-                pdfauthor={F. Author, S. Author and T. Author},
-}
 
 \Professor      {Pr Professor Name}
 
@@ -47,21 +28,29 @@
 \Department     {Département de physique}
 \Date           {\today}
 
+% Set pdf properties
+\hypersetup{
+                pdftitle={\Title},
+                pdfauthor={\authorA \authorB \authorC},
+                pdfsubject={\CourseName, \CourseCode},
+}
+
 \begin{document}
 
-    \Language{french}
+        \Language{french}
+        
+        \subfile{TitlePage}
+        
+        \clearpage
+        
+        \subfile{sections/num_1}
+        
+        \subfile{sections/num_2}
 
-    \subfile{TitlePage}
+        \clearpage
 
-    \clearpage
-
-    \subfile{sections/num_1}
-
-    \subfile{sections/num_2}
-
-    \clearpage
-
-    \pagestyle{plain}
-    \printbibliography
+        % Comment out lines in case of no bibliography
+        \pagestyle{plain}
+        \printbibliography
 
 \end{document}
