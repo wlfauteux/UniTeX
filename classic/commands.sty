@@ -7,7 +7,7 @@
 % Math & Physics
 % --------------
 % Blacksquare math proof env.
-\renewcommand{\qedsymbol}{\hfill\rule{0.7em}{0.7em}}
+\renewcommand{\qed}{\hfill\rule{0.7em}{0.7em}}
 
 % Partial derivative shortcut
 \newcommand{\pd}{\partial}
@@ -46,19 +46,18 @@
 % Add space and comma between equations
 \newcommand{\beq}{,\hspace{0.5cm}}
 
-% Correct braket notation
-\renewcommand{\ket}[1]{|{#1}\rangle}
-\renewcommand{\bra}[1]{\langle{#1}|}
-\renewcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
-
-% Complete set quantum mechanics
-\newcommand{\compset}[1]{\ket{#1}\bra{#1}}
-
 % Identity operator
 \newcommand{\identity}{\ensuremath{\mathbb{1}}}
 
 % Complex conjugate
 \newcommand{\cc}[1]{#1^{\ast}}
+
+% Mathematical number sets
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\C}{\mathds{C}}
 
 % -------------
 % Colored Boxes
@@ -105,7 +104,7 @@
 }
 
 % Numbered equation colored boxes
-\newcommand{\MNboxed}[2]{
+\newcommand{\solution}[2]{
     \begin{empheq}[box=\mymath]{align}
         \label{#2}
         #1
@@ -162,3 +161,4 @@
 % Math environment shortcut
 % -------------------------
 \def\[#1\]{\begin{align}#1\end{align}}
+
