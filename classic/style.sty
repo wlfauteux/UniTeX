@@ -1,12 +1,13 @@
 % -----------------
 % Style & Libraries
 % -----------------
-\ProvidesPackage{style}[2025/01/07]
+\ProvidesPackage{style}[2025/02/08]
 
 % --------------------------
 % Global page style settings
 % --------------------------
-\usepackage[mono,vvarbb,upint]{notomath} % Font
+\usepackage{tgpagella} % Fonts
+\usepackage{mathpazo} % Advanced math fonts
 \let\openbox\undefined
 \let\Bbbk\undefined
 \usepackage{sectsty} % Control sectional headers
@@ -24,7 +25,7 @@
 \usepackage[11pt]{moresize} % To use '\HUGE' fontsize
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
 \usepackage[titles]{tocloft} % Table of contents (ToC) customisation
-\usepackage[]{appendix} % Better appendix customisation
+\usepackage{appendix} % Better appendix customisation
 \usepackage[most]{tcolorbox} % Colored boxes support
 
 % ----------------
@@ -42,8 +43,7 @@
 \usepackage{physics}
 \usepackage{enumerate}
 \let\circledS\undefined
-\usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
-\usepackage{eucal} % Better calligraphy style for \mathcal
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage[squaren, Gray]{SIunits}
 
 % -------
