@@ -1,7 +1,7 @@
 % -----------------
 % Style & Libraries
 % -----------------
-\ProvidesPackage{style}[2025/01/07]
+\ProvidesPackage{style}[2025/02/08]
 
 % --------------------------
 % Global page style settings
@@ -89,9 +89,49 @@
         bookmarksopen=true,
 }
 
-% ----------------------------------------------
-% Titles (sections, subsections, subsubsections)
-% ----------------------------------------------
+% --------------------------------------------------------------------
+% Titles (problem, question, subquestion, subsections, subsubsections)
+% --------------------------------------------------------------------
+% Problem box format
+\newcommand{\boxproblem}[2]{
+        \begin{tcolorbox}[sharp corners, colback=white,colframe=\MasterColor,
+                colback=\MinorColor, arc=0pt, boxsep=0.25cm, nobeforeafter]
+               \centering{#1#2}
+        \end{tcolorbox}
+}
+
+\titleclass{\problem}[1]{straight}
+\newcounter{problem}
+\renewcommand{\theproblem}{\Roman{problem}}
+
+\titleformat{\problem}{
+        \normalfont\large\bfseries
+}{}{0em}{\boxproblem{Problème \theproblem\ :\ }}
+
+\titlespacing{\problem}{0pt}{0.4cm}{0.4cm}
+
+\titleclass{\question}{straight}[\problem]
+\newcounter{question}
+\renewcommand{\thequestion}{\alph{question}}
+
+\titleformat{\question}{
+        \normalfont\itshape
+}{(\thequestion)}{2em}{}
+
+\titlespacing{\question}{0pt}{0.4cm}{0.4cm}
+\counterwithin*{question}{problem}
+
+\titleclass{\subquestion}{straight}[\question]
+\newcounter{subquestion}
+\renewcommand{\thesubquestion}{\roman{subquestion}}
+
+\titleformat{\subquestion}{
+        \normalfont\itshape
+}{(\thequestion.\thesubquestion)}{2em}{}
+
+\titlespacing{\subquestion}{1em}{0.3cm}{0.3cm}
+\counterwithin*{subquestion}{question}
+
 \titleformat{\subsection}{
   \normalfont\large\bfseries{
     \color{\MasterColor}\titlerule[1pt]
