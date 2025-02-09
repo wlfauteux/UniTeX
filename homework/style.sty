@@ -6,7 +6,8 @@
 % --------------------------
 % Global page style settings
 % --------------------------
-\usepackage[mono,vvarbb,upint]{notomath} % Font
+\usepackage{tgpagella} % Fonts
+\usepackage{mathpazo} % Advanced math fonts
 \let\openbox\undefined
 \let\Bbbk\undefined
 \usepackage{sectsty} % Control sectional headers
@@ -16,7 +17,7 @@
 \usepackage{subfiles}
 
 \usepackage{booktabs} % Enhances the quality of tables
-\usepackage{hyperref}
+\usepackage{hyperref} % Implement links for references, equations and more
 
 \usepackage{geometry} % Customize page layout and dimensions
 \usepackage{fancyhdr} % Extensive control of page headers and footers
@@ -42,10 +43,9 @@
 \usepackage{bm} % Makes bold symbols in math env.
 \usepackage{array}
 \usepackage{empheq}
-\usepackage{physics}
+\usepackage{physics} % Contains many useful commands for physics formalism (e.g. bra-ket notation) and math shortcuts for frequently used environments and commands
 \let\circledS\undefined
-\usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
-\usepackage{eucal} % Better calligraphy style for \mathcal
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
 \usepackage[squaren, Gray]{SIunits}
 
 % -------
@@ -81,7 +81,6 @@
         hyperindex=true,
         bookmarks=true,
         pdfa,
-        linktocpage,
         colorlinks=true,
         breaklinks=true,
         urlcolor=black,
