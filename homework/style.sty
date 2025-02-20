@@ -43,10 +43,11 @@
 \usepackage{bm} % Makes bold symbols in math env.
 \usepackage{array}
 \usepackage{empheq}
+\usepackage{siunitx}
+\let\qty\undefined % Used by physics package
 \usepackage{physics} % Contains many useful commands for physics formalism (e.g. bra-ket notation) and math shortcuts for frequently used environments and commands
 \let\circledS\undefined
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
-\usepackage[squaren, Gray]{SIunits}
 
 % -------
 % Figures
@@ -73,6 +74,11 @@
 \geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
 \setlength{\headheight}{16pt}
 \setlength\parindent{0pt} % No indentation
+
+% -----------------
+% Cross referencing
+% -----------------
+\usepackage[french, english]{cleveref} % Better cross referencing
 
 % ----------------
 % Hyperlink format
@@ -110,26 +116,26 @@
 
 \titlespacing{\problem}{0pt}{0.4cm}{0.4cm}
 
-\titleclass{\question}{straight}[\problem]
 \newcounter{question}
-\renewcommand{\thequestion}{\alph{question}}
+\renewcommand{\thequestion}{\arabic{question}}
 
-\titleformat{\question}{
-        \normalfont\itshape
-}{(\thequestion)}{2em}{}
-
-\titlespacing{\question}{0pt}{0.4cm}{0.4cm}
+\newcommand{\question}[1]{
+        \stepcounter{question}
+        \begin{enumerate}[align=left, leftmargin=1cm, label=\textit{(\thequestion)}]
+                \item \textit{#1}
+        \end{enumerate}
+}
 \counterwithin*{question}{problem}
 
-\titleclass{\subquestion}{straight}[\question]
 \newcounter{subquestion}
-\renewcommand{\thesubquestion}{\roman{subquestion}}
+\renewcommand{\thesubquestion}{\thequestion.\alph{subquestion}}
 
-\titleformat{\subquestion}{
-        \normalfont\itshape
-}{(\thequestion.\thesubquestion)}{2em}{}
-
-\titlespacing{\subquestion}{1em}{0.3cm}{0.3cm}
+\newcommand{\subquestion}[1]{
+        \stepcounter{subquestion}
+        \begin{enumerate}[align=left, leftmargin=2cm, label=\textit{(\thesubquestion)}]
+                \item \textit{#1}
+        \end{enumerate}
+}
 \counterwithin*{subquestion}{question}
 
 \titleformat{\subsection}{

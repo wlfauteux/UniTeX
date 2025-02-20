@@ -40,11 +40,12 @@
 \usepackage{bm} % Makes bold symbols in math env.
 \usepackage{array}
 \usepackage{empheq}
+\usepackage{siunitx}
+\let\qty\undefined % Used by physics package
 \usepackage{physics}
 \usepackage{enumerate}
 \let\circledS\undefined
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
-\usepackage[squaren, Gray]{SIunits}
 
 % -------
 % Figures
@@ -115,6 +116,11 @@
 \geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
 \setlength{\headheight}{16pt}
 \setlength\parindent{0pt} % No indentation
+
+% -----------------
+% Cross referencing
+% -----------------
+\usepackage[french, english]{cleveref} % Better cross referencing
 
 % ----------------------------------------------
 % Titles (sections, subsections, subsubsections)
