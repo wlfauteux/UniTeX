@@ -28,10 +28,9 @@ The simplest way to use UniTeX's templates is by dowloading one from the links b
 
 |   Template   	|                                                                                                                    Description                                                                                                                    	| See template                                                                       	| Download link                                                                                                         	|
 |:------------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------	|
-|    Classic   	| Most likely suits longer document style such as lab and internship reports. 	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Classic/main.pdf)      	| [Get classic](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)           	|
-|  Assignment  	| Useful for homework assignments or projects that needs clear split between uncorrelated sections.                                            	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Assignment/main.pdf)     	| [Get assignment](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Assignment)         	|
-| Presentation 	| Beamer presentation style. Very minimalistic.                                                                                                                                                                                                     	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Presentation/main.pdf) 	| [Get presentation](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Presentation) 	|
-|    RevTeX    	| Two columns LaTeX template for non-official article style.                                                                                                                                                                                        	| WIP                                                                                	| WIP                                                                                                                   	|
+|    Classic   	| Most likely suits longer document style such as lab and internship reports. 	| [See default](https://github.com/wlfauteux/UniTeX/blob/main/classic/main.pdf)      	| [Get classic](https://downgit.evecalm.com/#/home?url=https://github.com/wlfauteux/UniTeX/tree/main/classic)           	|
+|  Homework  	| Useful for homework assignments or projects that needs clear split between uncorrelated sections.                                            	| [See default](https://github.com/wlfauteux/UniTeX/blob/main/homework/main.pdf)     	| [Get assignment](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Assignment)         	|
+| Presentation 	| Beamer presentation style. Very minimalistic.                                                                                                                                                                                                     	| [See default](https://github.com/wlfauteux/UniTeX/blob/main/presentation/main.pdf) 	| [Get presentation](https://downgit.evecalm.com/#/home?url=https://github.com/wlfauteux/UniTeX/tree/main/presentation) 	|
 
 </div>
 
@@ -39,31 +38,36 @@ You can directly use the downloaded within [Overleaf](https://www.overleaf.com/)
 
 To use it locally, UniTeX requires a complete TeX distribution. Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
+## Suggestion for Homework and Classic template Users
+
+Before you start using these templates, it is HIGHLY recommended to go over key packages located in `style.sty` and user defined commands located in `commands.sty`. Here are some of the many packages which should be read before your debut, as they'll only help you become more efficient.
+- `siunitx`: Internation System of Units implementation for LaTeX documents.
+- `physics`: Physics and mathematics command shortcuts for some of THE most used operators (e.g. derivative, partial derivative, matrices, Dirac's bra-ket notation).
+- `amsmath`: American Mathematical Society package for mathematics.
+
+Of course, they should not be read in their entirety but they SHOULD be looked at just enought for you to get a grasp of what they can do.
+
 # Configuration
 
 Every template folder contains a `main.tex` file in which are inputed configuration files (`preamble.sty, style.sty, commands.sty` and `colors.sty`) and the `.tex` files of the different sections of the project. Here we will describe how you can personnalise the template using the variables in these files.
 
 ### Classic
 
-- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` variable for one listed in [colors.sty](https://github.com/BCarnaval/UniTeX/blob/main/Classic/colors.sty). Title page variables are also at the beginning of this file.
+- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` variable for one listed in [colors.sty](https://github.com/wlfauteux/UniTeX/blob/main/classic/colors.sty). Title page variables are also at the beginning of this file.
 - `colors.sty`: use this file to choose a color for you document! If you want a color that is not listed in the file, add it by yourself using the same format.
 - `style.sty`: This is where all the modules are imported and briefly commented. Then, the style is defined (TOC setting, headers, references, dimensions, titles and etc.).
 - `commands.sty`: This is the place to defined your own commands. I put some for math & physics as well as the custom colored boxes.
 
-### Assignment
+### Homework
 
-- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` and `MinorColor` (lighter than principal color for the filling of the section box) variables for one listed in [colors.sty](https://github.com/BCarnaval/UniTeX/blob/main/Assignment/colors.sty). Title page variables are also at the beginning of this file.
+- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` and `MinorColor` (lighter than principal color for the filling of the section box) variables for one listed in [colors.sty](https://github.com/wlfauteux/UniTeX/blob/main/homework/colors.sty). Title page variables are also at the beginning of this file.
 - `colors.sty`: use this file to choose a color for you document! If you want a color that is not listed in the file, add it by yourself using the same format.
 - `style.sty`: This is where all the modules are imported and briefly commented. Then, the style is defined (TOC setting, headers, references, dimensions, titles and etc.).
 - `commands.sty`: This is the place to defined your own commands. I put some for math & physics as well as the custom colored boxes.
 
 ### Presentation
 
-- `premable.sty`: Beamer theme and color are defined here. Same for used modules and style settings. I regrouped all of the configuration files in one because of the simplicity of the project.
-
-### RevTeX
-
-WIP.
+- `preamble.sty`: Beamer theme and color are defined here. Same for used modules and style settings. I regrouped all of the configuration files in one because of the simplicity of the project.
 
 # Local LaTeX installation
 
@@ -84,10 +88,3 @@ at the root of a template will start a continuous compilation with `latexmk` and
 - `make zip`: Compiles the project then build a .zip with it.
 - `make targz`: Compiles the project then build a .tgz with it.
 
-# Todo
-
-- [x] 'Classic' template
-- [x] 'Homework' template (Overleaf's rebuild)
-- [ ] 'RevTeX' template
-- [x] 'Presentation' template from Beamer
-- [ ] Rework CLI (make it robust and clean to install)

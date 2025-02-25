@@ -1,0 +1,68 @@
+\documentclass[12pt, twoside]{article}
+\usepackage{colors,style,commands}
+
+% Bibliography file
+\addbibresource{refs.bib}
+
+% Default color palette for the document
+\MasterColor    {uds3}
+
+% Title page
+\CourseName     {Course I}
+\CourseCode     {PHQ \#\#\#}
+
+\Title          {Title}
+\SubTitle       {Subtitle}
+
+% In case of missing authors fill with \phantom{noauthor}
+\Name          {Author}
+
+% Set pdf properties
+\hypersetup{
+                pdftitle={\Title},
+                pdfauthor={\Name},
+                pdfsubject={\CourseName, \CourseCode},
+}
+
+\Professor      {Pr Professor Name}
+
+\Emblem         {UDS} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University     {Université de Sherbrooke}
+\Faculty        {Faculté des sciences}
+\Department     {Département de physique}
+\Date           {\today}
+
+\begin{document}
+        \Language{french}
+        
+        \subfile{TitlePage}
+        
+        \pagenumbering{roman}
+        \setcounter{page}{2}
+
+        \tableofcontents
+        
+        \clearpage
+        
+        \pagenumbering{arabic}
+        \setcounter{page}{1}
+
+        \subfile{sections/introduction}
+        
+        \subfile{sections/num_1}
+        
+        \subfile{sections/num_2}
+        
+        \subfile{sections/conclusion}
+        
+        % References
+        \clearpage
+        
+        \pagestyle{plain} % Remove header for references
+        \printbibliography
+        
+        % Appendix
+        %\clearpage
+
+        %\subfile{sections/appendice.tex}
+\end{document}

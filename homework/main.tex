@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{colors,style,commands}
+
+% Bibliography file
+\addbibresource{refs.bib}
+
+% Default color palette for the document
+\MasterColor    {uds3}
+\MinorColor     {lightuds3}
+
+% Title page
+\CourseName     {Course I}
+\CourseCode     {PHQ \#\#\#}
+
+\Title          {Title}
+\SubTitle       {Subtitle}
+
+% In case of missing authors fill withuse \phantom{noauthor}
+\authorA        {First Author, }
+\authorB        {Second Author, }
+\authorC        {Third Author}
+
+\Professor      {Pr Professor Name}
+
+\Emblem         {UDS} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University     {Université de Sherbrooke}
+\Faculty        {Faculté des sciences}
+\Department     {Département de physique}
+\Date           {\today}
+
+% Set pdf properties
+\hypersetup{
+                pdftitle={\Title},
+                pdfauthor={\authorA \authorB \authorC},
+                pdfsubject={\CourseName, \CourseCode},
+}
+
+\begin{document}
+
+        \Language{french}
+        
+        \subfile{TitlePage}
+        
+        \clearpage
+        
+        \subfile{sections/num_1}
+        
+        \subfile{sections/num_2}
+
+        \clearpage
+
+        % Comment out lines in case of no bibliography
+        \pagestyle{plain}
+        \printbibliography
+
+\end{document}
