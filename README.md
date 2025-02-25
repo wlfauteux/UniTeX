@@ -44,6 +44,7 @@ Before you start using these templates, it is HIGHLY recommended to go over key 
 - `siunitx`: Internation System of Units implementation for LaTeX documents.
 - `physics`: Physics and mathematics command shortcuts for some of THE most used operators (e.g. derivative, partial derivative, matrices, Dirac's bra-ket notation).
 - `amsmath`: American Mathematical Society package for mathematics.
+
 Of course, they should not be read in their entirety but they SHOULD be looked at just enought for you to get a grasp of what they can do.
 
 # Configuration
