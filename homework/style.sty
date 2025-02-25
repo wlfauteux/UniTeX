@@ -1,7 +1,7 @@
 % -----------------
 % Style & Libraries
 % -----------------
-\ProvidesPackage{style}[2025/02/08]
+\ProvidesPackage{style}[2025/02/25]
 
 % --------------------------
 % Global page style settings
@@ -178,14 +178,16 @@
 % ---------------------------------
 % Captions and French compatibility
 % ---------------------------------
-\DeclareCaptionLabelFormat{template}{\textbf{#1~#2}}
+\DeclareCaptionLabelFormat{template}{\textbf{#1\ #2}}
 
 \captionsetup{
         labelformat=template,
-        labelsep=newline,
+        labelsep=endash,
         font=small,
         width=0.8\linewidth,
-        }
+}
+
+\newcommand{\lcaption}[2]{\caption[#1]{\textbf{#1.}\ #2}}
 
 \addto\captionsfrench{\def\figurename{Figure}}
 \addto\captionsfrench{\def\tablename{Tableau}}
