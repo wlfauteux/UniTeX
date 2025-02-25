@@ -67,7 +67,7 @@ Every template folder contains a `main.tex` file in which are inputed configurat
 
 ### Presentation
 
-- `premable.sty`: Beamer theme and color are defined here. Same for used modules and style settings. I regrouped all of the configuration files in one because of the simplicity of the project.
+- `preamble.sty`: Beamer theme and color are defined here. Same for used modules and style settings. I regrouped all of the configuration files in one because of the simplicity of the project.
 
 # Local LaTeX installation
 
