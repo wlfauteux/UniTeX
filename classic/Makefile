@@ -5,7 +5,7 @@ TEMPLATE = UniTeX_classic
 DATE = $(shell date +"%F-%H")
 
 # Set default project name to (TEMPLATE)
-ifeq ($(PROJECT), homework)
+ifeq ($(PROJECT), classic)
 	PROJECT = $(TEMPLATE)
 endif
 
