@@ -1,7 +1,13 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_homework
+PROJECT = $(shell echo "$$(pwd)" | awk -F "/" '{print $$NF}')
+TEMPLATE = UniTeX_homework
 DATE = $(shell date +"%F-%H")
+
+# Set default project name to (TEMPLATE)
+ifeq ($(PROJECT), homework)
+	PROJECT = $(TEMPLATE)
+endif
 
 # Retreiving all source files
 BIB = $(shell find . -name "*.bib" -type f)
@@ -53,7 +59,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'homework' template cleaned !"
+	$(HIDE) echo -e '\n$(PROJECT) project cleaned!'
 
 targz:
 	$(MAKE) clean
@@ -66,3 +72,4 @@ zip:
 	$(MAKE) dry
 	$(MAKE) clean
 	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs
+
