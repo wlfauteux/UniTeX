@@ -11,7 +11,7 @@ endif
 
 # Retreiving all source files
 BIB = $(shell find . -name "*.bib" -type f)
-FIGS = $(shell find . -name "figs/*" -type f)
+FIGS = $(shell find . -path "figs/*" -type f)
 STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
