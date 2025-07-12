@@ -50,11 +50,11 @@ endif
 all: $(MAIN).pdf
 
 $(MAIN).pdf: $(SOURCE)
-	$(MK) -$(OUT) -$(OUT_MODE) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
+	$(MK) -$(OUT) -$(OUT_MODE) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN) 2>&1
 	$(MK) -c
 
 dry: $(SOURCE)
-	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
+	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN) 2>&1
 
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
