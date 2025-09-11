@@ -47,26 +47,41 @@
 \usepackage{empheq}
 \usepackage{siunitx}
 \let\qty\undefined % Used by physics package
-\usepackage{physics} % Contains many useful commands for physics formalism (e.g. bra-ket notation) and math shortcuts for frequently used environments and commands
+% Contains many useful commands for physics formalism (e.g. bra-ket notation)
+% and math shortcuts for frequently used environments and commands
+\usepackage{physics}
 \let\circledS\undefined
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+% Useful for writing out chemical compounds (e.g. crystal names)
+\usepackage{mhchem}
 
 % -------
 % Figures
 % -------
 \usepackage{wrapfig} % Merge figures and text blocks
 \usepackage{listings} % Insert code blocks in .tex file
-\usepackage[subrefformat=parens, labelformat=parens]{subcaption} % Insert subcaptions in figure's caption
+% Insert subcaptions in figure's caption
+\usepackage[subrefformat=parens, labelformat=parens]{subcaption}
 \usepackage{graphicx}
-\usepackage[section]{placeins} % Limits figure and table placement to current section
+% Limits figure and table placement to current section
+\usepackage[section]{placeins}
 \usetikzlibrary{decorations.pathreplacing} % Permit tikz decoration drawings
 
 % ------------
 % Bibliography
 % ------------
+% APS-style bibliography (from biblatex-phys documentation)
 \usepackage[
         backend=bibtex,
+        natbib=true,
         style=phys,
+        autocite=plain,
+        articletitle=false,
+        biblabel=brackets,
+        chaptertitle=false,
+        pageranges=false,
         ]{biblatex}
 \usepackage{csquotes}
 
