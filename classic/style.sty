@@ -19,7 +19,11 @@
 \usepackage{booktabs} % Enhances the quality of tables
 \usepackage{geometry} % Customize page layout and dimensions
 \usepackage{fancyhdr} % Extensive control of page headers and footers
-\usepackage{titlesec} % Select alternative section titles
+\usepackage{enumerate}
+% Provides user control over the layout of environments: enumerate, itemize and
+% description
+\usepackage{enumitem}
+\usepackage[nobottomtitles*]{titlesec} % Select alternative section titles
 \usepackage{blindtext} % Generate dummy text to test template
 \usepackage[T1]{fontenc} % Uses fonts that have 256 glyphs
 \usepackage[11pt]{moresize} % To use '\HUGE' fontsize
@@ -42,19 +46,27 @@
 \usepackage{empheq}
 \usepackage{siunitx}
 \let\qty\undefined % Used by physics package
+% Contains many useful commands for physics formalism (e.g. bra-ket notation)
+% and math shortcuts for frequently used environments and commands
 \usepackage{physics}
-\usepackage{enumerate}
 \let\circledS\undefined
 \usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+% Useful for writing out chemical compounds (e.g. crystal names)
+\usepackage{mhchem}
 
 % -------
 % Figures
 % -------
 \usepackage{wrapfig} % Merge figures and text blocks
 \usepackage{listings} % Insert code blocks in .tex file
-\usepackage[subrefformat=parens, labelformat=parens]{subcaption} % Insert subcaptions in figure's caption\usepackage{graphicx}
-\usepackage[section]{placeins} % Limit figure and table placement to current section
-%\usepackage[nomarkers, nolists, tablesonly]{endfloat} % Delay table placement to most generally the appendix
+% Insert subcaptions in figure's caption\usepackage{graphicx}
+\usepackage[subrefformat=parens, labelformat=parens]{subcaption}
+% Limit figure and table placement to current section
+\usepackage[section]{placeins}
+% Delay table placement to most generally the appendix
+%\usepackage[nomarkers, nolists, tablesonly]{endfloat}
 %\renewcommand{\efloatbegin}{}
 %\renewcommand{\efloatseparator}{\mbox{}}
 \usetikzlibrary{decorations.pathreplacing} % Permit tikz decoration drawings
